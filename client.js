@@ -22,7 +22,18 @@ const connect = function () {
 
   conn.write(`Name: ${name}`);
 
+  // const moves = ["Move: up", "Move: up", "Move: left", "Move: right"];
+  let time = 1;
+ 
 
+  setInterval(() => {
+    for (let move of moves) {
+    setTimeout(() => {
+    conn.write(move);
+    }, 50 * time);
+    time++;
+  }
+  }, 50);
 
   return conn;
 };
